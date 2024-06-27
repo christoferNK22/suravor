@@ -302,6 +302,37 @@ main {
   zoom: 1.5;
 }
 
+/*
+  Detail Restaurant
+*/
+.restaurant-detail {
+  color: white;
+}
+
+.restaurant-detail h4, h2 {
+  margin: 8px 0;
+}
+
+.restaurant-detail__general {
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant-detail__poster {
+  width: 100%;
+}
+
+.restaurant-detail__info{
+  padding: 3px 0;
+}
+
+.restaurant-detail__info h3{
+  padding-bottom: 8px;
+}
+
 .restaurant-card #cta {
   display: inline-block;
   background-color: #747474;

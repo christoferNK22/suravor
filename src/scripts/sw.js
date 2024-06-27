@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
 
 const assetsToCache = [
@@ -20,14 +21,9 @@ self.addEventListener('install', (event) => {
 });
    
 self.addEventListener('activate', (event) => {
-    console.log('Activating Service Worker ...');
-   
-    // TODO: Delete old caches
+    event.waitUntil(CacheHelper.deleteOldCache());
 });
    
 self.addEventListener('fetch', (event) => {
-    console.log(event.request);
-   
-    event.respondWith(fetch(event.request));
-    // TODO: Add/get fetch request to/from caches
+    event.respondWith(CacheHelper.revalidateCache(event.request));
 });

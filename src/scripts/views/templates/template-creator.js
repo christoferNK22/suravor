@@ -10,7 +10,7 @@ const createRestaurantListTemplate = (restaurant) => `
             <p tabindex="0">${restaurant.description.substring(0, 100)}...</p>
             <p class="city" tabindex="0">City: ${restaurant.city}</p>
             <p class="rating" tabindex="0">Rating: ⭐️ ${restaurant.rating}</p>
-            <a href="/#/detail${restaurant.id}" class="btn" id="cta" tabindex="0">View Details</a>
+            <a href="/#/detail/${restaurant.id}" class="btn" id="cta" tabindex="0">View Details</a>
         </div>
     </div>
 `;
