@@ -10,7 +10,7 @@ const createRestaurantListTemplate = (restaurant) => `
             <p tabindex="0">${restaurant.description.substring(0, 100)}...</p>
             <p class="city" tabindex="0">City: ${restaurant.city}</p>
             <p class="rating" tabindex="0">Rating: ⭐️ ${restaurant.rating}</p>
-            <a href="/#/detail/${restaurant.id}" class="btn" id="cta" tabindex="0">View Details</a>
+            <a href="#/detail/${restaurant.id}" class="btn" id="cta" tabindex="0">View Details</a>
         </div>
     </div>
 `;
@@ -42,8 +42,24 @@ const createRestaurantDetailTemplate = (restaurant) => `
                     </li>
                 `).join('')}
             </ul>
-            <button class="btn" id="favorite-button" tabindex="0">Add to Favorite</button>
     </div>
 `;
+
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
  
-export { createRestaurantListTemplate, createRestaurantDetailTemplate };
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+ 
+export { 
+    createRestaurantListTemplate, 
+    createRestaurantDetailTemplate, 
+    createLikeButtonTemplate, 
+    createLikedButtonTemplate 
+};
