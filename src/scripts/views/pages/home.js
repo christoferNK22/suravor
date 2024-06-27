@@ -4,7 +4,12 @@ import { createRestaurantListTemplate } from '../templates/template-creator';
 const Home = {
     async render() {
       return `
-        <custom-hero></custom-hero>
+        <div class="hero">
+          <div class="hero__text">
+            <h1 class= "hero__title" "tabindex="0">Welcome to Suravor</h1>
+            <p class="hero__body" tabindex="0">Discover the best restaurants in town!</p>
+          </div>
+        </div>
 
         <div class="content">
           <h2 class="content__heading">Restaurant List</h2>

@@ -5,7 +5,7 @@ const Favorites = {
       return `
       <div class="content">
         <h2 class="content__heading">Favorites Restaurant</h2>
-        <div id="restaurant" class="restaurant">
+        <div id="restaurants" class="restaurants">
         </div>
       </div>
       `;

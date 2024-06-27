@@ -27,19 +27,8 @@
         text-align: center;
         margin: 0;
     }
-  
-    .hero-text {
-      font-size: 0.5rem;
-    }
-  
-    .hero-text h1 {
-      font-size: 4vw;
-      margin-bottom: 0.5rem;
-    }
-  
-    .hero-text p {
-      font-size: 2vw;
-    }
+    
+    
   
     .restaurant-container {
       display: grid;

@@ -131,9 +131,10 @@ body {
   color: #ffd700;
 }
 
-a {
-  display: inline-block;
-}
+/*
+hero element
+*/
+
 
 .hero {
   display: flex;
@@ -141,6 +142,7 @@ a {
   text-align: center;
   min-height: 600px;
   width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../public/images/heros/hero-image_4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -163,12 +165,18 @@ a {
   font-weight: 300;
 }
 
+h2.content__heading {
+  padding: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
 /*
   Main Content
 */
  
 main {
-  padding: 32px;
   flex: 1;
 }
  
