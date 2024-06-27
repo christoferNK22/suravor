@@ -4,11 +4,7 @@ import { createRestaurantListTemplate } from '../templates/template-creator';
 const Home = {
     async render() {
       return `
-        <img src="/images/heros/hero-image_4.jpg" alt="Hero Image">
-        <div class="hero-text">
-            <h1 tabindex="0">Welcome to Suravor</h1>
-            <p tabindex="0">Discover the best restaurants in town!</p>
-        </div>
+        <custom-hero></custom-hero>
 
         <div class="content">
           <h2 class="content__heading">Restaurant List</h2>
@@ -23,7 +19,9 @@ const Home = {
         const restaurant = await RestaurantDBSource.restaurantList();
         const restaurantsContainer = document.querySelector('#restaurants');
   
-        restaurantsContainer.innerHTML = createRestaurantListTemplate(restaurant);
+        restaurant.forEach(item => {
+          restaurantsContainer.innerHTML += createRestaurantListTemplate(item);
+        });
       } catch (error) {
         console.error('Error rendering restaurants:', error);
         const restaurantsContainer = document.querySelector('#restaurants');

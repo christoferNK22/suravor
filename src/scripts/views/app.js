@@ -25,7 +25,7 @@ class App {
         this._content.innerHTML = await page.render();
         await page.afterRender();
         const skipToContent = document.querySelector('.skip-to-content');
-        skipLink.addEventListener('click', (e) => {
+        skipToContent.addEventListener('click', (e) => {
           e.preventDefault();
           document.querySelector('#main-content').scrollIntoView({
             behavior: 'smooth',
