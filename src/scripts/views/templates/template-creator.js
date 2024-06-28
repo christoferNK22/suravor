@@ -17,33 +17,50 @@ const createRestaurantListTemplate = (restaurant) => `
  
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant-detail__title">${restaurant.name}</h2>
-    <div class="restaurant-detail__general">
-        <h2 tabindex="0">${restaurant.name}</h2>
-            <img loading="lazy" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="${restaurant.name}" tabindex="0">
-            <p tabindex="0">Address: ${restaurant.address}</p>
-            <p tabindex="0">City: ${restaurant.city}</p>
-            <p tabindex="0">Description: ${restaurant.description}</p>
-        <h3 tabindex="0">Menus</h3>
-            <h4 tabindex="0">Foods</h4>
-                <ul>
-                    ${restaurant.menus.foods.map((food) => `<li tabindex="0">${food.name}</li>`).join('')}
-                </ul>
-            <h4 tabindex="0">Drinks</h4>
-                <ul>
-                    ${restaurant.menus.drinks.map((drink) => `<li tabindex="0">${drink.name}</li>`).join('')}
-                </ul>
-        <h3 tabindex="0">Customer Reviews</h3>
-            <ul>
-                ${restaurant.customerReviews.map((review) => `
-                    <li tabindex="0">
-                        <p>${review.name}</p>
-                        <p>${review.review}</p>
-                        <p>${review.date}</p>
-                    </li>
-                `).join('')}
-            </ul>
+  <div class="restaurant-detail__general">
+    <img class="restaurant-detail__poster lazyload" loading="lazy" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="Restoran ${restaurant.name}" />
+    <div class="restaurant-detail__info">
+      <h3 class="restaurant-detail__info-heading">Information</h3>  <div class="restaurant-detail__info-item">  <h4><b>Rating</b></h4> <p>⭐️ ${restaurant.rating}</p>
+      </div>
+      <div class="restaurant-detail__info-item">
+        <h4><b>City</b></h4> <p>${restaurant.city}</p>
+      </div>
+      <div class="restaurant-detail__info-item">
+        <h4><b>Address</b></h4> <p>${restaurant.address}</p>
+      </div>
+      <div class="restaurant-detail__info-item">
+        <h4><b>Categories</b></h4> <p>${restaurant.categories.map((categorie) => categorie.name).join(', ')}</p>
+      </div>
+      <div class="restaurant-detail__info-item">
+        <h4><b>Foods</b></h4> <p>${restaurant.menus.foods.map((food) => food.name).join(', ')}</p>
+      </div>
+      <div class="restaurant-detail__info-item">
+        <h4><b>Drinks</b></h4> <p>${restaurant.menus.drinks.map((drink) => drink.name).join(', ')}</p>
+      </div>
     </div>
+  </div>
+  <div class="restaurant-detail__spesific">
+    <h4><b>Description</b></h4> <p>${restaurant.description}</p>
+  </div>
+  <div class="review">
+    <h3><b>Restaurant Review</b></h3> <div class="review__list">
+      ${restaurant.customerReviews
+        .map((review) => `
+          <div class="review__item">
+            <div class="review__user">
+              <p>${review.name}</p>
+              <p>${review.date}</p>
+            </div>
+            <div class="review__description">
+              <p>${review.review}</p>
+            </div>
+          </div>
+        `)
+        .join('')}
+    </div>
+  </div>
 `;
+
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
