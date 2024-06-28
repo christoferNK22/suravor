@@ -1,8 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDBSource from '../../data/restaurantdb-source';
-import { createRestaurantDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb.js';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -16,6 +16,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantDBSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant-detail');
+    
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     LikeButtonInitiator.init({

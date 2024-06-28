@@ -1,4 +1,4 @@
-import API_ENDPOINT from '../globals/api-endpoint.js';
+import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantDBSource {
   static async restaurantList() {

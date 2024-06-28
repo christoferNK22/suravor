@@ -21,10 +21,10 @@ const Home = {
 
   async afterRender() {
     try {
-      const restaurant = await RestaurantDBSource.restaurantList();
+      const restaurants = await RestaurantDBSource.restaurantList();
       const restaurantsContainer = document.querySelector('#restaurants');
 
-      restaurant.forEach((item) => {
+      restaurants.forEach((item) => {
         restaurantsContainer.innerHTML += createRestaurantListTemplate(item);
       });
     } catch (error) {
