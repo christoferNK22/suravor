@@ -1,4 +1,4 @@
-import RestaurantDBSource from '../../data/restaurantdb-source';
+import RestaurantDbSource from '../../data/restaurantdb-source';
 import { createRestaurantListTemplate } from '../templates/template-creator';
 
 const Home = {
@@ -21,7 +21,7 @@ const Home = {
 
   async afterRender() {
     try {
-      const restaurants = await RestaurantDBSource.restaurantList();
+      const restaurants = await RestaurantDbSource.restaurantList();
       const restaurantsContainer = document.querySelector('#restaurants');
 
       restaurants.forEach((item) => {
