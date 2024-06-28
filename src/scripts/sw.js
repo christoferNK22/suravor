@@ -1,6 +1,7 @@
 import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
 
+
 const assetsToCache = [
   './',
   '../public/icons/icon-16x16.png',
@@ -14,6 +15,7 @@ const assetsToCache = [
   './views/app.bundle.js',
   './public/app.webmanifest',
   './sw.bundle.js',
+  './index.js',
 ];
 
 self.addEventListener('install', (event) => {
