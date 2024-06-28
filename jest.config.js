@@ -21,13 +21,4 @@ const config = {
   },
 };
 
-module.exports = {
-  preset: 'jest-puppeteer',
-  testTimeout: 30000,
-  globals: {
-      URL: 'http://localhost:8080', // Ganti dengan URL aplikasi Anda
-  },
-  testMatch: [
-      '**/tests/e2e/**/*.js'
-  ],
-};
+module.exports = config;

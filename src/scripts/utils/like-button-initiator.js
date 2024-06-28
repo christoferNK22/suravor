@@ -29,13 +29,13 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await this.favoriteRestaurants.putRestaurant(this._restaurant);
+      await this._favoriteRestaurants.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
 
   _renderLiked() {
-    this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {

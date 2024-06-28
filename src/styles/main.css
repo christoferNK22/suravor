@@ -5,6 +5,19 @@
   margin: 0;
 }
 
+a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-block;
+}
+
+.btn,
+a,
+input {
+  min-width: 44px;
+  min-height: 44px;
+}
+
 .skip-to-content {
   position: absolute;
   top: -100px;
@@ -18,11 +31,6 @@
 
 .skip-to-content:focus {
   top: 0;
-}
-
-.btn {
-  min-width: 44px;
-  max-height: 44px;
 }
 
 body {
