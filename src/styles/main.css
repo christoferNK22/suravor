@@ -429,7 +429,7 @@ main {
 cta 
 */
 
-.restaurant-card #cta {
+.restaurant-card-content #cta {
   display: inline-block;
   background-color: #747474;
   color: #333;
@@ -438,9 +438,10 @@ cta
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
 }
 
-.restaurant-card #cta:hover {
+.restaurant-card-content #cta:hover {
   background-color: #ffc107;
 }
 
