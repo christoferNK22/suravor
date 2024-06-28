@@ -1,5 +1,5 @@
 import CONFIG from '../../globals/config';
- 
+
 const createRestaurantListTemplate = (restaurant) => `
     <div id="main-content" class="restaurant-item">
         <div class="restaurant-item__header">
@@ -14,7 +14,7 @@ const createRestaurantListTemplate = (restaurant) => `
         </div>
     </div>
 `;
- 
+
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant-detail__title">${restaurant.name}</h2>
   <div class="restaurant-detail__general">
@@ -45,7 +45,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="review">
     <h3><b>Restaurant Review</b></h3> <div class="review__list">
       ${restaurant.customerReviews
-        .map((review) => `
+    .map((review) => `
           <div class="review__item">
             <div class="review__user">
               <p>${review.name}</p>
@@ -56,27 +56,26 @@ const createRestaurantDetailTemplate = (restaurant) => `
             </div>
           </div>
         `)
-        .join('')}
+    .join('')}
     </div>
   </div>
 `;
-
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
- 
+
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
- 
-export { 
-    createRestaurantListTemplate, 
-    createRestaurantDetailTemplate, 
-    createLikeButtonTemplate, 
-    createLikedButtonTemplate 
+
+export {
+  createRestaurantListTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };

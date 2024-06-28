@@ -1,5 +1,5 @@
 import API_ENDPOINT from '../globals/api-endpoint.js';
- 
+
 class RestaurantDBSource {
   static async restaurantList() {
     try {
@@ -14,7 +14,7 @@ class RestaurantDBSource {
       throw error;
     }
   }
- 
+
   static async detailRestaurant(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
@@ -29,5 +29,5 @@ class RestaurantDBSource {
     }
   }
 }
- 
+
 export default RestaurantDBSource;

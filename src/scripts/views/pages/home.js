@@ -2,8 +2,8 @@ import RestaurantDBSource from '../../data/restaurantdb-source';
 import { createRestaurantListTemplate } from '../templates/template-creator';
 
 const Home = {
-    async render() {
-      return `
+  async render() {
+    return `
         <div class="hero">
           <div class="hero__text">
             <h1 class= "hero__title" "tabindex="0">Welcome to Suravor</h1>
@@ -17,22 +17,22 @@ const Home = {
           </div>
         </div>
       `;
-    },
-   
-    async afterRender() {
-      try {
-        const restaurant = await RestaurantDBSource.restaurantList();
-        const restaurantsContainer = document.querySelector('#restaurants');
-  
-        restaurant.forEach(item => {
-          restaurantsContainer.innerHTML += createRestaurantListTemplate(item);
-        });
-      } catch (error) {
-        console.error('Error rendering restaurants:', error);
-        const restaurantsContainer = document.querySelector('#restaurants');
-        restaurantsContainer.innerHTML = '<p>Failed to load restaurant list. Please try again later.</p>';
-      }
-    },
-  };
-   
-  export default Home;
+  },
+
+  async afterRender() {
+    try {
+      const restaurant = await RestaurantDBSource.restaurantList();
+      const restaurantsContainer = document.querySelector('#restaurants');
+
+      restaurant.forEach((item) => {
+        restaurantsContainer.innerHTML += createRestaurantListTemplate(item);
+      });
+    } catch (error) {
+      console.error('Error rendering restaurants:', error);
+      const restaurantsContainer = document.querySelector('#restaurants');
+      restaurantsContainer.innerHTML = '<p>Failed to load restaurant list. Please try again later.</p>';
+    }
+  },
+};
+
+export default Home;

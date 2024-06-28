@@ -183,10 +183,14 @@ main {
 .content {
   margin: 0 auto;
   min-height: 100%;
+  font-weight: normal;
+  padding: 0 32px;
 }
 
 .content .content__heading {
-  font-weight: normal;
+  padding: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
 /*
@@ -196,10 +200,8 @@ main {
 .restaurants {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 3rem;
-  padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
+  gap: 16px;
+  margin: 32px 0;
 }
 
 .restaurant-card {
