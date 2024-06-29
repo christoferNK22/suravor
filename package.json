@@ -10,6 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:e2e": "jest --config=jest.config.js",
+    "lint:fix": "eslint ./src --fix",
+    "lint": "eslint ./src",
     "compress-images": "imagemin src/public/images/heros/* --out-dir=dist/images/heros --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant"
   },
   "keywords": [],
