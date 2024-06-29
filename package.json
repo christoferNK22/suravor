@@ -12,6 +12,7 @@
     "test:e2e": "jest --config=jest.config.js",
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
+    "e2e": "codeceptjs run --steps",
     "compress-images": "imagemin src/public/images/heros/* --out-dir=dist/images/heros --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant"
   },
   "keywords": [],
@@ -28,6 +29,7 @@
     "babel-jest": "^29.7.0",
     "babel-loader": "^8.3.0",
     "clean-webpack-plugin": "^4.0.0",
+    "codeceptjs": "^3.6.4",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.11.0",
     "eslint": "^8.57.0",
@@ -45,6 +47,7 @@
     "imagemin-pngquant": "^10.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.6.1",
+    "playwright": "^1.45.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.92.1",
     "webpack-bundle-analyzer": "^4.10.2",
