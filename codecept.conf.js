@@ -13,17 +13,12 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'http://localhost:9000',
+      url: 'http://localhost:8080',
       show: true
     }
   },
   include: {
     I: './steps_file.js'
   },
-  name: 'katalog-restoran-pwa-testing-optimized',
-  plugins: {
-    screenshotOnFail: {
-      enabled: false,
-    },
-  },
+  name: 'katalog-restoran-pwa-testing-optimized'
 }

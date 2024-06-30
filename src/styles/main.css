@@ -253,7 +253,8 @@ restaurant item
 }
 
 .restaurant-item .restaurant-item__content {
-  padding: 16px;
+  padding: 10px 16px;
+  
 }
 
 .restaurant-item .restaurant-item__content h3 {
@@ -273,9 +274,6 @@ restaurant item
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
-
-
-
 
 /*
   Detail Restaurant
@@ -409,27 +407,30 @@ restaurant item
 cta 
 */
 
-.restaurant-item__content #cta {
-  display: inline-block;
-  background-color: #747474;
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  margin-top: 1.5rem;
-}
-
-.restaurant-item__content #cta:hover {
-  background-color: #ffc107;
-}
-
 .cta-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  margin-top: 10px;
 }
+
+.restaurant-item__content__button {
+  background-color: #424242; 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.restaurant-item__content__button:hover {
+  background-color: #ffc107;
+  color: #333;
+  font-weight: bold;
+}
+
 
 /*
   Like
