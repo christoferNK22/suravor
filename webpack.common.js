@@ -48,13 +48,24 @@ module.exports = {
       clientsClaim : true,
       runtimeCaching: [
         {
-          urlPattern: new RegExp("^https://restaurant-api.dicoding.dev"),
-          handler: "StaleWhileRevalidate",
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: "RestaurantCatalogue-V1",
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+            cacheName: 'restaurantdb-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'restaurantdb-image-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'jsdelivr-cache',
           },
         },
       ],

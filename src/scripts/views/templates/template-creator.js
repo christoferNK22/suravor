@@ -2,17 +2,22 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantListTemplate = (restaurant) => `
     <div id="main-content" class="restaurant-item">
-        <div class="restaurant-item__header">
-            <img loading="lazy" tabindex="0" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="${restaurant.name}">
-        </div>
-        <div class="restaurant-card-content">
-            <h2 tabindex="0">${restaurant.name}</h2>
-            <p tabindex="0">${restaurant.description.substring(0, 100)}...</p>
-            <p class="city" tabindex="0">City: ${restaurant.city}</p>
-            <p class="rating" tabindex="0">Rating: ⭐️ ${restaurant.rating}</p>
-            <a href="#/detail/${restaurant.id}" class="btn" id="cta" tabindex="0">View Details</a>
-        </div>
+    <div class="restaurant-item__header">
+      <img class="restaurant-item__header__poster lazyload" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="Restoran ${restaurant.name}">
+      <div class="restaurant-item__header__rating">
+        <p>⭐️<span class="restaurant-item__header__rating__score">${restaurant.rating}</span></p>
+      </div>
     </div>
+    <div class="restaurant-item__content">
+      <h3 class="restaurant__title">
+        <a class=" btn" href="/#/detail/${restaurant.id}">${restaurant.name}</a>
+      </h3>
+      <p>${restaurant.description}</p>
+      <div class="cta-container">
+        <a href="/#/detail/${restaurant.id}" class="restaurant-item__content__button">Detail</a>
+      </div>
+    </div>
+  </div>
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `

@@ -1,10 +1,54 @@
-Feature('LikingRestaurants');
+const assert = require('assert');
+
+Feature('Liking Restaurant');
 
 Before(({ I }) => {
-    I.amOnPage('/#/favorites');
+  I.amOnPage('/#/favorites');
 });
 
-Scenario('showing empty liked restaurants', ({ I }) => {
-    I.seeElement('.restaurant-card-content');
-    I.see('Tidak ada restaurant untuk ditampilkan', '.restaurant-item__not__found');
+Scenario('liking one restaurant', async ({ I }) => {
+  I.see('Kamu belum menambahkan restaurant favorite', '.restaurant-item__not__found');
+
+  I.amOnPage('/');
+  //   pause();
+  I.seeElement('.restaurant__title a');
+  const firstRestaurant = locate('.restaurant__title a').first();
+  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.seeElement('.restaurant-item');
+  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title');
+
+  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+});
+
+Scenario('unliking one restaurant', async ({ I }) => {
+  I.see('Kamu belum menambahkan restaurant favorite', '.restaurant-item__not__found');
+
+  I.amOnPage('/');
+
+  I.seeElement('.restaurant__title a');
+  const firstRestaurant = locate('.restaurant__title a').first();
+  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.seeElement('.restaurant-item');
+  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title');
+
+  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+
+  I.click(firstRestaurant);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.see('Kamu belum menambahkan restaurant favorite', '.restaurant-item__not__found');
 });
